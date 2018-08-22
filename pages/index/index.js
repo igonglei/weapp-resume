@@ -7,7 +7,8 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    resume: []
   },
   //事件处理函数
   bindViewTap: function() {
@@ -16,6 +17,7 @@ Page({
     })
   },
   onLoad: function () {
+    this.getResume()
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -43,12 +45,28 @@ Page({
       })
     }
   },
+  onPullDownRefresh: function () {
+    wx.stopPullDownRefresh()
+    this.getResume()
+  },
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  },
+  //获取简历信息
+  getResume(callback) {
+    wx.showNavigationBarLoading()
+    wx.request({
+      url: 'https://gitlab.com/igonglei/pub/raw/master/static/resume.json',
+      success: res => {
+        wx.hideNavigationBarLoading()
+        this.setData({
+          resume: [res.data]
+        })
+      }
+    })
+  },
 })
