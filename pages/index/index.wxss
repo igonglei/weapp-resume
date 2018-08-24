@@ -41,30 +41,35 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-grow: 1;
 }
 
 .userinfo-avatar {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80rpx;
 }
 
 .avatar {
   width: 400rpx;
   height: 400rpx;
-  margin: 20rpx;
   border-radius: 50%;
   will-change: transform;
   animation: zoomOut 0.4s linear forwards;
 }
 
 .avatar-circle {
-  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid #a8e28b;
   width: 420rpx;
   height: 420rpx;
   will-change: transform, top, left;
   border-radius: 50%;
   position: absolute;
-  top: 10rpx;
-  left: 10rpx;
+  top: 69rpx;
+  left: -11rpx;
   z-index: -1;
   animation: scale 2s linear infinite 1s;
 }
