@@ -1,12 +1,13 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
+  "pages": [
+    "pages/index/index"
   ],
-  "window":{
+  "window": {
     "navigationBarBackgroundColor": "#F8F8F8",
-    "navigationBarTextStyle": "black",
+    "navigationBarTextStyle": "white",
     "navigationBarTitleText": "雷公的简历",
-    "backgroundColor": "#F8F8F8"
+    "navigationStyle": "custom",
+    "backgroundColor": "transparent",
+    "backgroundTextStyle": "light"
   }
 }

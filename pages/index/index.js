@@ -1,72 +1,33 @@
 //index.js
+const { imageCDN } = require('../../config')
+
 //获取应用实例
 const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    resume: []
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+    resume: {},
+    avatar: app.globalData.avatar,
+    startImg: `${imageCDN}resume.png`,
+    profileImg: `${imageCDN}profile.png`,
+    educationImg: `${imageCDN}education.png`,
+    jobImg: `${imageCDN}job.png`,
+    skillImg: `${imageCDN}skill.png`,
+    worksImg: `${imageCDN}works.png`,
+    contactImg: `${imageCDN}contact.png`
   },
   onLoad: function () {
-    this.getResume()
-    if (app.globalData.userInfo) {
+    const resume = app.globalData.resume
+    if (resume) {
       this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
+        resume
       })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
     } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
-  },
-  onPullDownRefresh: function () {
-    wx.stopPullDownRefresh()
-    this.getResume()
-  },
-  getUserInfo: function(e) {
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  },
-  //获取简历信息
-  getResume(callback) {
-    wx.showNavigationBarLoading()
-    wx.request({
-      url: 'https://gitlab.com/igonglei/pub/raw/master/static/resume.json',
-      success: res => {
-        wx.hideNavigationBarLoading()
+      app.resumeReadyCallback = res => {
         this.setData({
-          resume: [res.data]
+          resume: res.data
         })
       }
-    })
-  },
+    }
+  }
 })

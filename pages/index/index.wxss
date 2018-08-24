@@ -1,4 +1,42 @@
 /**index.wxss**/
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.swiper-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.start-img {
+  width: 340rpx;
+  padding: 200rpx 0;
+  will-change: transform;
+  animation: bounce 0.4s linear forwards;
+}
+
+.start-text {
+  color: #a8e28b;
+  display: flex;
+  align-items: center;
+  will-change: transform, opacity;
+  opacity: 0;
+  animation: startText 0.4s linear 1s forwards;
+}
+
+.text-left {
+  padding-right: 10rpx;
+}
+
+.text-right {
+  padding-left: 10rpx;
+}
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -6,16 +44,214 @@
 }
 
 .userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
+  position: relative;
+}
+
+.avatar {
+  width: 400rpx;
+  height: 400rpx;
   margin: 20rpx;
   border-radius: 50%;
+  will-change: transform;
+  animation: zoomOut 0.4s linear forwards;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.avatar-circle {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 420rpx;
+  height: 420rpx;
+  will-change: transform, top, left;
+  border-radius: 50%;
+  position: absolute;
+  top: 10rpx;
+  left: 10rpx;
+  z-index: -1;
+  animation: scale 2s linear infinite 1s;
 }
 
-.usermotto {
-  margin-top: 200px;
+.head {
+  padding: 50rpx 0;
+  align-self: flex-start;
+}
+
+.head-title {
+  color: #a8e28b;
+  font-weight: 700;
+  font-size: 50rpx;
+  padding-bottom: 10rpx;
+  will-change: transform;
+  transform: translateX(-100%);
+  animation: title 0.5s ease 1s forwards;
+}
+
+.head-split {
+  width: 0;
+  height: 6rpx;
+  background-color: #a8e28b;
+  will-change: transform;
+  animation: title-split 0.5s ease 1.5s forwards;
+}
+
+.userinfo-text {
+  padding: 40rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 320rpx;
+}
+
+.userinfo-common {
+  color: #999;
+  will-change: transform, opacity;
+  opacity: 0;
+  animation: username 0.3s linear 1s forwards;
+}
+
+.userinfo-name {
+  color: #a8e28b;
+  font-weight: 700;
+  font-size: 50rpx;
+}
+
+.userinfo-edu {
+  animation-delay: 1.3s;
+}
+
+.userinfo-workYear {
+  animation-delay: 1.6s;
+}
+
+.userinfo-address {
+  animation-delay: 1.9s;
+}
+
+.userinfo-job {
+  color: #fff;
+  font-size: 40rpx;
+  animation-delay: 2.2s;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.title-img {
+  width: 140rpx;
+  height: 248rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+  will-change: transform;
+  transform: translateX(100%);
+  animation: titleImg 0.3s linear 1.5s forwards;
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1.4);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1.2);
+  }
+
+  40% {
+    transform: scale(1);
+  }
+
+  80% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes title {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(60rpx);
+  }
+}
+
+@keyframes title-split {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 120rpx;
+  }
+}
+
+@keyframes username {
+  0% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes startText {
+  0% {
+    opacity: 0;
+    transform: rotate(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes titleImg {
+  0% {
+    right: 0;
+    opacity: 0;
+    transform: rotate(45deg);
+  }
+
+  100% {
+    right: 50rpx;
+    opacity: 1;
+    transform: rotate(0deg);
+  }
 }

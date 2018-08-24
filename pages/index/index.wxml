@@ -1,16 +1,93 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover" animation="{{animationData}}"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <view wx:for="{{resume}}" wx:key="name">
-      <view>姓名：{{item.name}}</view>
-      <view>介绍：{{item.intro}}</view>
-    </view>
-  </view>
+  <swiper class="swiper" indicator-dots="{{true}}" vertical="{{true}}" indicator-color="rgba(255, 255, 255, 0.5)" indicator-active-color="#a8e28b">
+    <swiper-item class="swiper-item">
+      <image class="start-img" src="{{startImg}}" mode="aspectFit"></image>
+      <view class="start-text">
+        <view class="text-left">放飞梦想</view>
+        <view class="text-right">扬帆起航</view>
+      </view>
+      <view class="arrow-top"></view>
+    </swiper-item>
+    <swiper-item class="swiper-item">
+      <view class="head">
+        <view class="head-title">ABOUT</view>
+        <view class="head-split"></view>
+      </view>
+      <view class="userinfo">
+        <view class="userinfo-avatar">
+          <image class="avatar" src="{{avatar}}"></image>
+          <view class="avatar-circle"></view>
+        </view>
+        <view class="userinfo-text">
+          <view class="userinfo-common userinfo-name">{{resume.name}}</view>
+          <view class="userinfo-common userinfo-edu">{{resume.edu}}</view>
+          <view class="userinfo-common userinfo-workYear">{{resume.workYear}}</view>
+          <view class="userinfo-common userinfo-address">{{resume.address}}</view>
+          <view class="userinfo-common userinfo-job">{{resume.job}}</view>
+        </view>
+      </view>
+      <view class="arrow-top"></view>
+    </swiper-item>
+    <swiper-item class="swiper-item">
+      <view class="head">
+        <view class="head-title">PROFILE</view>
+        <view class="head-split"></view>
+      </view>
+      <view class="profile-content">
+        <image class="title-img" src="{{profileImg}}" mode="aspectFit"></image>
+      </view>
+      <view class="arrow-top"></view>
+    </swiper-item>
+    <swiper-item class="swiper-item">
+      <view class="head">
+        <view class="head-title">EDUCATION</view>
+        <view class="head-split"></view>
+      </view>
+      <view class="profile-content">
+        <image class="title-img" src="{{educationImg}}" mode="aspectFit"></image>
+      </view>
+      <view class="arrow-top"></view>
+    </swiper-item>
+    <swiper-item class="swiper-item">
+      <view class="head">
+        <view class="head-title">JOB</view>
+        <view class="head-split"></view>
+      </view>
+      <view class="profile-content">
+        <image class="title-img" src="{{jobImg}}" mode="aspectFit"></image>
+      </view>
+      <view class="arrow-top"></view>
+    </swiper-item>
+    <swiper-item class="swiper-item">
+      <view class="head">
+        <view class="head-title">SKILL</view>
+        <view class="head-split"></view>
+      </view>
+      <view class="profile-content">
+        <image class="title-img" src="{{skillImg}}" mode="aspectFit"></image>
+      </view>
+      <view class="arrow-top"></view>
+    </swiper-item>
+    <swiper-item class="swiper-item">
+      <view class="head">
+        <view class="head-title">WORKS</view>
+        <view class="head-split"></view>
+      </view>
+      <view class="profile-content">
+        <image class="title-img" src="{{worksImg}}" mode="aspectFit"></image>
+      </view>
+      <view class="arrow-top"></view>
+    </swiper-item>
+    <swiper-item class="swiper-item">
+      <view class="head">
+        <view class="head-title">CONTACT</view>
+        <view class="head-split"></view>
+      </view>
+      <view class="profile-content">
+        <image class="title-img" src="{{contactImg}}" mode="aspectFit"></image>
+      </view>
+      <view class="arrow-top"></view>
+    </swiper-item>
+  </swiper>
 </view>
