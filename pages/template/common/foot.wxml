@@ -1,0 +1,3 @@
+<template name="foot">
+  <view class="arrow-top"></view>
+</template>

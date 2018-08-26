@@ -1,0 +1,20 @@
+<import src="common/head.wxml" />
+<import src="common/foot.wxml" />
+
+<template name="about">
+  <template is="head" data="{{title: 'ABOUT', headTitleAni: animation.aboutHeadTitleAni, headSplitAni: animation.aboutHeadSplitAni}}" />
+  <view class="userinfo">
+    <view class="userinfo-avatar">
+      <image class="avatar {{animation.avatar}}" src="{{avatar}}"></image>
+      <view class="avatar-circle"></view>
+    </view>
+    <view class="userinfo-text">
+      <view class="userinfo-common userinfo-name">{{resume.name}}</view>
+      <view class="userinfo-common userinfo-edu">{{resume.edu}}</view>
+      <view class="userinfo-common userinfo-workYear">{{resume.workYear}}</view>
+      <view class="userinfo-common userinfo-address">{{resume.address}}</view>
+      <view class="userinfo-common userinfo-job">{{resume.job}}</view>
+    </view>
+  </view>
+  <template is="foot" />
+</template>

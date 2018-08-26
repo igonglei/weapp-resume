@@ -1,0 +1,10 @@
+<import src="common/head.wxml" />
+<import src="common/foot.wxml" />
+
+<template name="contact">
+  <template is="head" data="{{title: 'CONTACT'}}" />
+  <view class="profile-content">
+    <image class="title-img" src="{{image.contact}}" mode="aspectFit"></image>
+  </view>
+  <template is="foot" />
+</template>

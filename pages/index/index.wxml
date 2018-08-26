@@ -1,93 +1,38 @@
 <!--index.wxml-->
+<import src="../template/cover.wxml" />
+<import src="../template/about.wxml" />
+<import src="../template/profile.wxml" />
+<import src="../template/education.wxml" />
+<import src="../template/job.wxml" />
+<import src="../template/skill.wxml" />
+<import src="../template/works.wxml" />
+<import src="../template/contact.wxml" />
+
 <view class="container">
-  <swiper class="swiper" indicator-dots="{{true}}" vertical="{{true}}" indicator-color="rgba(255, 255, 255, 0.5)" indicator-active-color="#a8e28b">
+  <swiper class="swiper" indicator-dots="{{true}}" vertical="{{true}}" indicator-color="rgba(255, 255, 255, 0.5)" indicator-active-color="#a8e28b" bindchange="bindchange">
     <swiper-item class="swiper-item">
-      <image class="start-img" src="{{startImg}}" mode="aspectFit"></image>
-      <view class="start-text">
-        <view class="text-left">放飞梦想</view>
-        <view class="text-right">扬帆起航</view>
-      </view>
-      <view class="arrow-top"></view>
+      <template is="cover" data="{{image, animation}}" />
     </swiper-item>
     <swiper-item class="swiper-item">
-      <view class="head">
-        <view class="head-title">ABOUT</view>
-        <view class="head-split"></view>
-      </view>
-      <view class="userinfo">
-        <view class="userinfo-avatar">
-          <image class="avatar" src="{{avatar}}"></image>
-          <view class="avatar-circle"></view>
-        </view>
-        <view class="userinfo-text">
-          <view class="userinfo-common userinfo-name">{{resume.name}}</view>
-          <view class="userinfo-common userinfo-edu">{{resume.edu}}</view>
-          <view class="userinfo-common userinfo-workYear">{{resume.workYear}}</view>
-          <view class="userinfo-common userinfo-address">{{resume.address}}</view>
-          <view class="userinfo-common userinfo-job">{{resume.job}}</view>
-        </view>
-      </view>
-      <view class="arrow-top"></view>
+      <template is="about" data="{{avatar, resume, animation}}" />
     </swiper-item>
     <swiper-item class="swiper-item">
-      <view class="head">
-        <view class="head-title">PROFILE</view>
-        <view class="head-split"></view>
-      </view>
-      <view class="profile-content">
-        <image class="title-img" src="{{profileImg}}" mode="aspectFit"></image>
-      </view>
-      <view class="arrow-top"></view>
+      <template is="profile" data="{{image, resume, animation}}" />
     </swiper-item>
     <swiper-item class="swiper-item">
-      <view class="head">
-        <view class="head-title">EDUCATION</view>
-        <view class="head-split"></view>
-      </view>
-      <view class="profile-content">
-        <image class="title-img" src="{{educationImg}}" mode="aspectFit"></image>
-      </view>
-      <view class="arrow-top"></view>
+      <template is="education" data="{{image, resume, animation}}" />
     </swiper-item>
     <swiper-item class="swiper-item">
-      <view class="head">
-        <view class="head-title">JOB</view>
-        <view class="head-split"></view>
-      </view>
-      <view class="profile-content">
-        <image class="title-img" src="{{jobImg}}" mode="aspectFit"></image>
-      </view>
-      <view class="arrow-top"></view>
+      <template is="job" data="{{image, resume, animation}}" />
     </swiper-item>
     <swiper-item class="swiper-item">
-      <view class="head">
-        <view class="head-title">SKILL</view>
-        <view class="head-split"></view>
-      </view>
-      <view class="profile-content">
-        <image class="title-img" src="{{skillImg}}" mode="aspectFit"></image>
-      </view>
-      <view class="arrow-top"></view>
+      <template is="skill" data="{{image, resume, animation}}" />
     </swiper-item>
     <swiper-item class="swiper-item">
-      <view class="head">
-        <view class="head-title">WORKS</view>
-        <view class="head-split"></view>
-      </view>
-      <view class="profile-content">
-        <image class="title-img" src="{{worksImg}}" mode="aspectFit"></image>
-      </view>
-      <view class="arrow-top"></view>
+      <template is="works" data="{{image, resume, animation}}" />
     </swiper-item>
     <swiper-item class="swiper-item">
-      <view class="head">
-        <view class="head-title">CONTACT</view>
-        <view class="head-split"></view>
-      </view>
-      <view class="profile-content">
-        <image class="title-img" src="{{contactImg}}" mode="aspectFit"></image>
-      </view>
-      <view class="arrow-top"></view>
+      <template is="contact" data="{{image, resume, animation}}" />
     </swiper-item>
   </swiper>
 </view>

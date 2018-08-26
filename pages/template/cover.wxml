@@ -1,0 +1,10 @@
+<import src="common/foot.wxml" />
+
+<template name="cover">
+  <image class="start-img {{animation.startImg}}" src="{{image.start}}" mode="aspectFit"></image>
+  <view class="start-text {{animation.startText}}">
+    <view class="text-left">放飞梦想</view>
+    <view class="text-right">扬帆起航</view>
+  </view>
+  <template is="foot" />
+</template>

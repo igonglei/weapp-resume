@@ -1,0 +1,6 @@
+<template name="head">
+  <view class="head">
+    <view class="head-title {{headTitleAni}}">{{title}}</view>
+    <view class="head-split {{headSplitAni}}"></view>
+  </view>
+</template>

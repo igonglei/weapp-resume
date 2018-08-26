@@ -1,0 +1,10 @@
+<import src="common/head.wxml" />
+<import src="common/foot.wxml" />
+
+<template name="skill">
+  <template is="head" data="{{title: 'SKILL'}}" />
+  <view class="profile-content">
+    <image class="title-img" src="{{image.skill}}" mode="aspectFit"></image>
+  </view>
+  <template is="foot" />
+</template>
