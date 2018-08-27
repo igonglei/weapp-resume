@@ -182,15 +182,30 @@
 }
 
 .profile-content {
-  padding-right: 200rpx;
+  padding-right: 220rpx;
   padding-left: 100rpx;
   will-change: transform, opacity;
   opacity: 0;
   transform: translateY(-100%);
+  text-indent: 80rpx;
 }
 
 .profile-content-ani {
   animation: profileContent 0.4s ease-in-out 1.3s forwards;
+}
+
+.edu-content {
+  display: flex;
+  width: 100%;
+  padding-left: 200rpx;
+}
+
+.point {
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background-color: #a8e28b;
+  margin: 15rpx 20rpx;
 }
 
 @keyframes fadeIn {

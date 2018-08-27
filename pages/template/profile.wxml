@@ -6,7 +6,9 @@
   <view class="main-content">
     <image class="title-img {{animation.profileTitleImg}}" src="{{image.profile}}" mode="aspectFit"></image>
     <view class="profile-content {{animation.profileContent}}">
-      {{resume.intro}}
+      <view wx:for="{{resume.intro}}" wx:key="*this">
+        {{item}}
+      </view>
     </view>
   </view>
   <template is="foot" />
