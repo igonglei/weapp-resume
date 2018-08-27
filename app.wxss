@@ -5,7 +5,7 @@
 page {
   background-image: url(https://lg-npha00ki-1257320081.cos.ap-shanghai.myqcloud.com/bg.jpg);
   height: 100%;
-  font-size: 32rpx;
+  font-size: 36rpx;
   line-height: 1.6;
   color: #fff;
 }

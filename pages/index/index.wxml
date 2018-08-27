@@ -9,12 +9,12 @@
 <import src="../template/contact.wxml" />
 
 <view class="container">
-  <swiper class="swiper" indicator-dots="{{true}}" vertical="{{true}}" indicator-color="rgba(255, 255, 255, 0.5)" indicator-active-color="#a8e28b" bindchange="bindchange">
+  <swiper class="swiper" indicator-dots="{{true}}" vertical="{{true}}" indicator-color="rgba(255, 255, 255, 0.5)" indicator-active-color="#a8e28b" bindchange="bindchange" current="3">
     <swiper-item class="swiper-item">
       <template is="cover" data="{{image, animation}}" />
     </swiper-item>
     <swiper-item class="swiper-item">
-      <template is="about" data="{{avatar, resume, animation}}" />
+      <template is="about" data="{{avatar, image, resume, animation}}" />
     </swiper-item>
     <swiper-item class="swiper-item">
       <template is="profile" data="{{image, resume, animation}}" />

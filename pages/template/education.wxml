@@ -2,9 +2,9 @@
 <import src="common/foot.wxml" />
 
 <template name="education">
-  <template is="head" data="{{title: 'EDUCATION'}}" />
-  <view class="profile-content">
-    <image class="title-img" src="{{image.education}}" mode="aspectFit"></image>
+  <template is="head" data="{{title: 'EDUCATION', headTitleAni: animation.eduHeadTitle, headSplitAni: animation.eduHeadSplit}}" />
+  <view class="main-content">
+    <image class="title-img {{animation.eduTitleImg}}" src="{{image.education}}" mode="aspectFit"></image>
   </view>
   <template is="foot" />
 </template>

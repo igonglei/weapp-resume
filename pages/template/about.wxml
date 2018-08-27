@@ -2,18 +2,19 @@
 <import src="common/foot.wxml" />
 
 <template name="about">
-  <template is="head" data="{{title: 'ABOUT', headTitleAni: animation.aboutHeadTitleAni, headSplitAni: animation.aboutHeadSplitAni}}" />
-  <view class="userinfo">
+  <template is="head" data="{{title: 'ABOUT', headTitleAni: animation.aboutHeadTitle, headSplitAni: animation.aboutHeadSplit}}" />
+  <view class="main-content">
+    <image class="title-img {{animation.aboutTitleImg}}" src="{{image.about}}" mode="aspectFit"></image>
     <view class="userinfo-avatar">
       <image class="avatar {{animation.avatar}}" src="{{avatar}}"></image>
-      <view class="avatar-circle"></view>
+      <view class="avatar-circle {{animation.avatarCircle}}"></view>
     </view>
     <view class="userinfo-text">
-      <view class="userinfo-common userinfo-name">{{resume.name}}</view>
-      <view class="userinfo-common userinfo-edu">{{resume.edu}}</view>
-      <view class="userinfo-common userinfo-workYear">{{resume.workYear}}</view>
-      <view class="userinfo-common userinfo-address">{{resume.address}}</view>
-      <view class="userinfo-common userinfo-job">{{resume.job}}</view>
+      <view class="userinfo-common userinfo-name {{animation.userName}}">{{resume.name}}</view>
+      <view class="userinfo-common {{animation.userEdu}}">{{resume.edu}}</view>
+      <view class="userinfo-common {{animation.userWorkYear}}">{{resume.workYear}}</view>
+      <view class="userinfo-common {{animation.userAddress}}">{{resume.address}}</view>
+      <view class="userinfo-common userinfo-job  {{animation.userJob}}">{{resume.job}}</view>
     </view>
   </view>
   <template is="foot" />

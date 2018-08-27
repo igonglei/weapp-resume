@@ -2,9 +2,9 @@
 <import src="common/foot.wxml" />
 
 <template name="works">
-  <template is="head" data="{{title: 'WORKS'}}" />
-  <view class="profile-content">
-    <image class="title-img" src="{{image.works}}" mode="aspectFit"></image>
+  <template is="head" data="{{title: 'WORKS', headTitleAni: animation.worksHeadTitle, headSplitAni: animation.worksHeadSplit}}" />
+  <view class="main-content">
+    <image class="title-img {{animation.worksTitleImg}}" src="{{image.works}}" mode="aspectFit"></image>
   </view>
   <template is="foot" />
 </template>

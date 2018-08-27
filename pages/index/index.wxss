@@ -21,7 +21,7 @@
 }
 
 .start-img-ani {
-  animation: fadeIn 0.1s ease forwards, bounce 0.4s linear forwards;
+  animation: fadeIn 0.2s ease 0.2s forwards, bounce 0.4s linear 0.2s forwards;
 }
 
 .start-text {
@@ -44,11 +44,13 @@
   padding-left: 10rpx;
 }
 
-.userinfo {
+.main-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
+  position: relative;
+  width: 100%;
 }
 
 .userinfo-avatar {
@@ -57,12 +59,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 80rpx;
+  padding-top: 100rpx;
 }
 
 .avatar {
-  width: 400rpx;
-  height: 400rpx;
+  width: 320rpx;
+  height: 320rpx;
   border-radius: 50%;
   will-change: transform, opacity;
   opacity: 0;
@@ -74,20 +76,23 @@
 
 .avatar-circle {
   border: 1px solid #a8e28b;
-  width: 420rpx;
-  height: 420rpx;
+  width: 340rpx;
+  height: 340rpx;
   will-change: transform, top, left, opacity;
   border-radius: 50%;
   position: absolute;
-  top: 69rpx;
+  top: 89rpx;
   left: -11rpx;
   z-index: -1;
   opacity: 0;
+}
+
+.avatar-circle-ani {
   animation: avatarCircle 2s linear infinite 1s;
 }
 
 .head {
-  padding: 50rpx 0;
+  padding: 60rpx 0;
   align-self: flex-start;
 }
 
@@ -101,7 +106,7 @@
 }
 
 .head-title-ani {
-  animation: title 0.5s ease 1s forwards;
+  animation: title 0.4s ease 0.6s forwards;
 }
 
 .head-split {
@@ -112,23 +117,22 @@
 }
 
 .head-split-ani {
-  animation: title-split 0.5s ease 1.5s forwards;
+  animation: title-split 0.4s ease 1s forwards;
 }
 
 .userinfo-text {
-  padding: 40rpx 0;
+  padding: 60rpx 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 320rpx;
+  height: 350rpx;
 }
 
 .userinfo-common {
   color: #999;
   will-change: transform, opacity;
   opacity: 0;
-  animation: username 0.3s linear 1s forwards;
 }
 
 .userinfo-name {
@@ -137,45 +141,56 @@
   font-size: 50rpx;
 }
 
-.userinfo-edu {
-  animation-delay: 1.3s;
+.userinfo-name-ani {
+  animation: username 0.3s linear 1s forwards;
 }
 
-.userinfo-workYear {
-  animation-delay: 1.6s;
+.userinfo-edu-ani {
+  animation: username 0.3s linear 1.3s forwards;
 }
 
-.userinfo-address {
-  animation-delay: 1.9s;
+.userinfo-workYear-ani {
+  animation: username 0.3s linear 1.6s forwards;
+}
+
+.userinfo-address-ani {
+  animation: username 0.3s linear 1.9s forwards;
 }
 
 .userinfo-job {
   color: #fff;
   font-size: 40rpx;
-  animation-delay: 2.2s;
 }
 
-.profile-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  flex-grow: 1;
+.userinfo-job-ani {
+  animation: username 0.3s linear 2.2s forwards;
 }
 
 .title-img {
-  width: 140rpx;
-  height: 248rpx;
+  width: 113rpx;
+  height: 200rpx;
   position: absolute;
   top: 0;
   right: 0;
-  will-change: transform;
+  will-change: transform, opacity;
+  opacity: 0;
   transform: translateX(100%);
 }
 
 .title-img-ani {
-  animation: titleImg 0.3s linear 1.5s forwards;
+  animation: titleImg 0.3s linear 1s forwards;
+}
+
+.profile-content {
+  padding-right: 200rpx;
+  padding-left: 100rpx;
+  will-change: transform, opacity;
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.profile-content-ani {
+  animation: profileContent 0.4s ease-in-out 1.3s forwards;
 }
 
 @keyframes fadeIn {
@@ -212,11 +227,11 @@
   }
 
   40% {
-    transform: scale(1);
+    transform: scale(0.9);
   }
 
   80% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 
   100% {
@@ -231,8 +246,8 @@
   }
 
   50% {
-    opacity: 0.5;
-    transform: scale(1.05);
+    opacity: 0.6;
+    transform: scale(1.04);
   }
 
   100% {
@@ -263,7 +278,6 @@
 
 @keyframes username {
   0% {
-    opacity: 1;
     transform: scale(1.2);
   }
 
@@ -293,8 +307,19 @@
   }
 
   100% {
-    right: 50rpx;
+    right: 45rpx;
     opacity: 1;
     transform: rotate(0deg);
+  }
+}
+
+@keyframes profileContent {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

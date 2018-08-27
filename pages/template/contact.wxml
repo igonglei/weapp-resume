@@ -2,9 +2,9 @@
 <import src="common/foot.wxml" />
 
 <template name="contact">
-  <template is="head" data="{{title: 'CONTACT'}}" />
-  <view class="profile-content">
-    <image class="title-img" src="{{image.contact}}" mode="aspectFit"></image>
+  <template is="head" data="{{title: 'CONTACT', headTitleAni: animation.contactHeadTitle, headSplitAni: animation.contactHeadSplit}}" />
+  <view class="main-content">
+    <image class="title-img {{animation.contactTitleImg}}" src="{{image.contact}}" mode="aspectFit"></image>
   </view>
   <template is="foot" />
 </template>

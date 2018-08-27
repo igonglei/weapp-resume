@@ -2,9 +2,12 @@
 <import src="common/foot.wxml" />
 
 <template name="profile">
-  <template is="head" data="{{title: 'PROFILE', headTitleAni: animation.profileHeadTitleAni, headSplitAni: animation.profileHeadSplitAni}}" />
-  <view class="profile-content">
-    <image class="title-img {{animation.profileTitleImgAni}}" src="{{image.profile}}" mode="aspectFit"></image>
+  <template is="head" data="{{title: 'PROFILE', headTitleAni: animation.profileHeadTitle, headSplitAni: animation.profileHeadSplit}}" />
+  <view class="main-content">
+    <image class="title-img {{animation.profileTitleImg}}" src="{{image.profile}}" mode="aspectFit"></image>
+    <view class="profile-content {{animation.profileContent}}">
+      {{resume.intro}}
+    </view>
   </view>
   <template is="foot" />
 </template>
