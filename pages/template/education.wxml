@@ -7,9 +7,9 @@
     <image class="title-img {{animation.eduTitleImg}}" src="{{image.education}}" mode="aspectFit"></image>
     <view class="edu-content" wx:for="{{resume.education}}" wx:key="school">
       <view class="point"></view>
-      <view>
-        <view>{{item.school}}</view>
-        <view>{{item.period}}</view>
+      <view class="edu-item">
+        <view class="edu-period">{{item.period}}</view>
+        <view>{{item.school}} {{item.degree}}</view>
       </view>
     </view>
   </view>

@@ -51,6 +51,7 @@
   flex-grow: 1;
   position: relative;
   width: 100%;
+  padding: 40rpx 0;
 }
 
 .userinfo-avatar {
@@ -59,7 +60,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 100rpx;
+  padding-top: 60rpx;
 }
 
 .avatar {
@@ -81,7 +82,7 @@
   will-change: transform, top, left, opacity;
   border-radius: 50%;
   position: absolute;
-  top: 89rpx;
+  top: 49rpx;
   left: -11rpx;
   z-index: -1;
   opacity: 0;
@@ -182,12 +183,13 @@
 }
 
 .profile-content {
-  padding-right: 220rpx;
-  padding-left: 100rpx;
+  padding-right: 230rpx;
+  padding-left: 130rpx;
   will-change: transform, opacity;
   opacity: 0;
   transform: translateY(-100%);
-  text-indent: 80rpx;
+  text-indent: 60rpx;
+  line-height: 1.8;
 }
 
 .profile-content-ani {
@@ -197,15 +199,22 @@
 .edu-content {
   display: flex;
   width: 100%;
+  padding-bottom: 50rpx;
   padding-left: 200rpx;
 }
 
 .point {
-  width: 20rpx;
-  height: 20rpx;
+  width: 15rpx;
+  height: 15rpx;
   border-radius: 50%;
   background-color: #a8e28b;
   margin: 15rpx 20rpx;
+  border: 4rpx solid #e5fdddb7;
+}
+
+.edu-period {
+  color: #a8e28b;
+  font-size: 30rpx;
 }
 
 @keyframes fadeIn {
