@@ -193,28 +193,49 @@
 }
 
 .profile-content-ani {
-  animation: profileContent 0.4s ease-in-out 1.3s forwards;
+  animation: profileContent 0.5s ease-in-out 1.3s forwards;
 }
 
-.edu-content {
+.timeline {
   display: flex;
   width: 100%;
-  padding-bottom: 50rpx;
+  padding-bottom: 60rpx;
   padding-left: 200rpx;
 }
 
-.point {
+.timeline-point {
   width: 15rpx;
   height: 15rpx;
   border-radius: 50%;
   background-color: #a8e28b;
   margin: 15rpx 20rpx;
   border: 4rpx solid #e5fdddb7;
+  will-change: transform, opacity;
+  opacity: 0;
 }
 
-.edu-period {
+.timeline-point-ani {
+    animation: tlPoint 0.2s linear 1.3s forwards;
+}
+
+.timeline-period {
   color: #a8e28b;
   font-size: 30rpx;
+  will-change: transform, opacity;
+  opacity: 0;
+}
+
+.timeline-period-ani {
+    animation: tlPeriod 0.3s linear 1.5s forwards;
+}
+
+.timeline-info {
+  will-change: transform, opacity;
+  opacity: 0;
+}
+
+.timeline-info-ani {
+    animation: tlInfo 0.3s ease-in-out 1.8s forwards;
 }
 
 @keyframes fadeIn {
@@ -338,6 +359,39 @@
 }
 
 @keyframes profileContent {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tlPoint {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes tlPeriod {
+  0% {
+    transform: translateX(50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes tlInfo {
   0% {
     transform: translateY(-100%);
   }

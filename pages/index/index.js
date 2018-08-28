@@ -16,7 +16,10 @@ const animation = {
   headTitle: 'head-title-ani',
   headSplit: 'head-split-ani',
   titleImg: 'title-img-ani',
-  profileContent: 'profile-content-ani'
+  profileContent: 'profile-content-ani',
+  timelinePoint: 'timeline-point-ani',
+  timelinePeriod: 'timeline-period-ani',
+  timelineInfo: 'timeline-info-ani'
 }
 
 //获取应用实例
@@ -67,9 +70,12 @@ Page({
       worksTitleImg: '',
       contactHeadTitle: '',
       contactHeadSplit: '',
-      contactTitleImg: ''
+      contactTitleImg: '',
+      eduTimelinePoint: '',
+      eduTimelinePeriod: '',
+      eduTimelineInfo: ''
     },
-    current: 3
+    current: 0
   },
   onLoad: function() {
     const resume = app.globalData.resume
@@ -113,12 +119,15 @@ Page({
       'animation.eduHeadTitle': current === 3 ? animation.headTitle : '',
       'animation.eduHeadSplit': current === 3 ? animation.headSplit : '',
       'animation.eduTitleImg': current === 3 ? animation.titleImg : '',
+      'animation.eduTimelinePoint': current === 3 ? animation.timelinePoint : '',
+      'animation.eduTimelinePeriod': current === 3 ? animation.timelinePeriod : '',
+      'animation.eduTimelineInfo': current === 3 ? animation.timelineInfo : '',
       'animation.jobHeadTitle': current === 4 ? animation.headTitle : '',
       'animation.jobHeadSplit': current === 4 ? animation.headSplit : '',
       'animation.jobTitleImg': current === 4 ? animation.titleImg : '',
       'animation.skillHeadTitle': current === 5 ? animation.headTitle : '',
       'animation.skillHeadSplit': current === 5 ? animation.headSplit : '',
-      'animation.skillTitleImg': current === 5? animation.titleImg : '',
+      'animation.skillTitleImg': current === 5 ? animation.titleImg : '',
       'animation.worksHeadTitle': current === 6 ? animation.headTitle : '',
       'animation.worksHeadSplit': current === 6 ? animation.headSplit : '',
       'animation.worksTitleImg': current === 6 ? animation.titleImg : '',

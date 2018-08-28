@@ -9,7 +9,7 @@
 <import src="../template/contact.wxml" />
 
 <view class="container">
-  <swiper class="swiper" indicator-dots="{{true}}" vertical="{{true}}" indicator-color="rgba(255, 255, 255, 0.5)" indicator-active-color="#a8e28b" bindchange="bindchange" current="3">
+  <swiper class="swiper" indicator-dots="{{true}}" vertical="{{true}}" indicator-color="rgba(255, 255, 255, 0.5)" indicator-active-color="#a8e28b" bindchange="bindchange" current="0">
     <swiper-item class="swiper-item">
       <template is="cover" data="{{image, animation}}" />
     </swiper-item>
