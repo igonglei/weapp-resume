@@ -32,7 +32,7 @@ module.exports = {
       "value": 80
     },
     {
-      "text": "VUE.JS",
+      "text": "VUEJS",
       "value": 70
     },
     {

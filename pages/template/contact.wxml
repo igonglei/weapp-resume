@@ -5,6 +5,10 @@
   <template is="head" data="{{title: 'CONTACT', headTitleAni: animation.contactHeadTitle, headSplitAni: animation.contactHeadSplit}}" />
   <view class="main-content">
     <image class="title-img {{animation.contactTitleImg}}" src="{{image.contact}}" mode="aspectFit"></image>
+    <view class="contact-content">
+      <image class="qrcode {{animation.qrcode}}" src="{{image.qrcode}}" mode="aspectFit"></image>
+      <button type="primary" bindtap="callMe">一键拨号</button>
+    </view>
   </view>
   <template is="foot" />
 </template>

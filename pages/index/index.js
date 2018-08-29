@@ -20,7 +20,8 @@ const animation = {
   timelinePoint: 'timeline-point-ani',
   timelinePeriod: 'timeline-period-ani',
   timelineInfo: 'timeline-info-ani',
-  timelineLine: 'timeline-line-ani'
+  timelineLine: 'timeline-line-ani',
+  qrcode: 'qrcode-ani'
 }
 
 //获取应用实例
@@ -38,7 +39,8 @@ Page({
       job: `${imageCDN}job.png`,
       skill: `${imageCDN}skill.png`,
       works: `${imageCDN}works.png`,
-      contact: `${imageCDN}contact.png`
+      contact: `${imageCDN}contact.png`,
+      qrcode: `${imageCDN}qrcode.jpg`
     },
     animation: {
       startImg: '',
@@ -79,9 +81,10 @@ Page({
       jobTimelinePoint: '',
       jobTimelinePeriod: '',
       jobTimelineInfo: '',
-      jobTimelineLine: ''
+      jobTimelineLine: '',
+      qrcode: ''
     },
-    current: 5,
+    current: 7,
     skills: []
   },
   onLoad: function() {
@@ -145,7 +148,8 @@ Page({
       'animation.worksTitleImg': current === 6 ? animation.titleImg : '',
       'animation.contactHeadTitle': current === 7 ? animation.headTitle : '',
       'animation.contactHeadSplit': current === 7 ? animation.headSplit : '',
-      'animation.contactTitleImg': current === 7 ? animation.titleImg : ''
+      'animation.contactTitleImg': current === 7 ? animation.titleImg : '',
+      'animation.qrcode': current === 7 ? animation.qrcode : ''
     })
     this.setProgressAnimation(current)
   },
