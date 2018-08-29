@@ -21,7 +21,10 @@ const animation = {
   timelinePeriod: 'timeline-period-ani',
   timelineInfo: 'timeline-info-ani',
   timelineLine: 'timeline-line-ani',
-  qrcode: 'qrcode-ani'
+  qrcode: 'qrcode-ani',
+  callme: 'call-me-ani',
+  contactTitle: 'contact-title-ani',
+  contactValue: 'contact-value-ani'
 }
 
 //获取应用实例
@@ -82,9 +85,12 @@ Page({
       jobTimelinePeriod: '',
       jobTimelineInfo: '',
       jobTimelineLine: '',
-      qrcode: ''
+      qrcode: '',
+      callme: '',
+      contactTitle: '',
+      contactValue: ''
     },
-    current: 7,
+    current: 0,
     skills: []
   },
   onLoad: function() {
@@ -149,7 +155,10 @@ Page({
       'animation.contactHeadTitle': current === 7 ? animation.headTitle : '',
       'animation.contactHeadSplit': current === 7 ? animation.headSplit : '',
       'animation.contactTitleImg': current === 7 ? animation.titleImg : '',
-      'animation.qrcode': current === 7 ? animation.qrcode : ''
+      'animation.qrcode': current === 7 ? animation.qrcode : '',
+      'animation.callme': current === 7 ? animation.callme : '',
+      'animation.contactTitle': current === 7 ? animation.contactTitle : '',
+      'animation.contactValue': current === 7 ? animation.contactValue : ''
     })
     this.setProgressAnimation(current)
   },
@@ -174,5 +183,10 @@ Page({
       current: e.detail.current
     })
     this.setAnimation()
+  },
+  callMe: function() {
+    wx.makePhoneCall({
+      phoneNumber: this.data.resume.phone
+    })
   }
 })
