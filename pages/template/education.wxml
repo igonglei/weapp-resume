@@ -5,13 +5,7 @@
   <template is="head" data="{{title: 'EDUCATION', headTitleAni: animation.eduHeadTitle, headSplitAni: animation.eduHeadSplit}}" />
   <view class="main-content">
     <image class="title-img {{animation.eduTitleImg}}" src="{{image.education}}" mode="aspectFit"></image>
-    <view class="timeline" wx:for="{{resume.education}}" wx:key="school">
-      <view class="timeline-point {{animation.eduTimelinePoint}}" style="animation-delay:{{index+1.3}}s"></view>
-      <view class="timeline-item">
-        <view class="timeline-period {{animation.eduTimelinePeriod}}" style="animation-delay:{{index+1.5}}s">{{item.period}}</view>
-        <view class="timeline-info {{animation.eduTimelineInfo}}" style="animation-delay:{{index+1.8}}s">{{item.school}} {{item.degree}}</view>
-      </view>
-    </view>
+    <timeline data="{{resume.education}}" point-ani="{{animation.eduTimelinePoint}}" period-ani="{{animation.eduTimelinePeriod}}" info-ani="{{animation.eduTimelineInfo}}" line-ani="{{animation.eduTimelineLine}}"></timeline>
   </view>
   <template is="foot" />
 </template>

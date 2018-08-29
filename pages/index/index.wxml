@@ -9,7 +9,7 @@
 <import src="../template/contact.wxml" />
 
 <view class="container">
-  <swiper class="swiper" indicator-dots="{{true}}" vertical="{{true}}" indicator-color="rgba(255, 255, 255, 0.5)" indicator-active-color="#a8e28b" bindchange="bindchange" current="0">
+  <swiper class="swiper" indicator-dots="{{true}}" vertical="{{true}}" indicator-color="rgba(255, 255, 255, 0.5)" indicator-active-color="#a8e28b" bindchange="bindchange" current="5">
     <swiper-item class="swiper-item">
       <template is="cover" data="{{image, animation}}" />
     </swiper-item>
@@ -26,7 +26,7 @@
       <template is="job" data="{{image, resume, animation}}" />
     </swiper-item>
     <swiper-item class="swiper-item">
-      <template is="skill" data="{{image, resume, animation}}" />
+      <template is="skill" data="{{image, resume, animation, skills}}" />
     </swiper-item>
     <swiper-item class="swiper-item">
       <template is="works" data="{{image, resume, animation}}" />

@@ -19,7 +19,8 @@ const animation = {
   profileContent: 'profile-content-ani',
   timelinePoint: 'timeline-point-ani',
   timelinePeriod: 'timeline-period-ani',
-  timelineInfo: 'timeline-info-ani'
+  timelineInfo: 'timeline-info-ani',
+  timelineLine: 'timeline-line-ani'
 }
 
 //获取应用实例
@@ -73,9 +74,15 @@ Page({
       contactTitleImg: '',
       eduTimelinePoint: '',
       eduTimelinePeriod: '',
-      eduTimelineInfo: ''
+      eduTimelineInfo: '',
+      eduTimelineLine: '',
+      jobTimelinePoint: '',
+      jobTimelinePeriod: '',
+      jobTimelineInfo: '',
+      jobTimelineLine: ''
     },
-    current: 0
+    current: 5,
+    skills: []
   },
   onLoad: function() {
     const resume = app.globalData.resume
@@ -122,9 +129,14 @@ Page({
       'animation.eduTimelinePoint': current === 3 ? animation.timelinePoint : '',
       'animation.eduTimelinePeriod': current === 3 ? animation.timelinePeriod : '',
       'animation.eduTimelineInfo': current === 3 ? animation.timelineInfo : '',
+      'animation.eduTimelineLine': current === 3 ? animation.timelineLine : '',
       'animation.jobHeadTitle': current === 4 ? animation.headTitle : '',
       'animation.jobHeadSplit': current === 4 ? animation.headSplit : '',
       'animation.jobTitleImg': current === 4 ? animation.titleImg : '',
+      'animation.jobTimelinePoint': current === 4 ? animation.timelinePoint : '',
+      'animation.jobTimelinePeriod': current === 4 ? animation.timelinePeriod : '',
+      'animation.jobTimelineInfo': current === 4 ? animation.timelineInfo : '',
+      'animation.jobTimelineLine': current === 4 ? animation.timelineLine : '',
       'animation.skillHeadTitle': current === 5 ? animation.headTitle : '',
       'animation.skillHeadSplit': current === 5 ? animation.headSplit : '',
       'animation.skillTitleImg': current === 5 ? animation.titleImg : '',
@@ -135,6 +147,23 @@ Page({
       'animation.contactHeadSplit': current === 7 ? animation.headSplit : '',
       'animation.contactTitleImg': current === 7 ? animation.titleImg : ''
     })
+    this.setProgressAnimation(current)
+  },
+  setProgressAnimation: function(current) {
+    if (current === 5) {
+      const skills = this.data.resume.skills
+      for (let i = 0; i < skills.length; i++) {
+        setTimeout(() => {
+          this.setData({
+            skills: this.data.skills.concat([skills[i]])
+          })
+        }, 1300 + i * 800)
+      }
+    } else {
+      this.setData({
+        skills: []
+      })
+    }
   },
   bindchange: function(e) {
     this.setData({

@@ -5,6 +5,15 @@
   <template is="head" data="{{title: 'SKILL', headTitleAni: animation.skillHeadTitle, headSplitAni: animation.skillHeadSplit}}" />
   <view class="main-content">
     <image class="title-img {{animation.skillTitleImg}}" src="{{image.skill}}" mode="aspectFit"></image>
+    <view class="skill-content">
+      <block wx:for="{{skills}}" wx:key="text">
+        <progress class="progress" percent="{{item.value}}" stroke-width="12" activeColor="#a8e28c" backgroundColor="#151515" active />
+        <view class="progress progress-content">
+          <view class="progress-text">{{item.text}}</view>
+          <view class="progress-value">{{item.value}}%</view>
+        </view>
+      </block>
+    </view>
   </view>
   <template is="foot" />
 </template>

@@ -196,46 +196,29 @@
   animation: profileContent 0.5s ease-in-out 1.3s forwards;
 }
 
-.timeline {
-  display: flex;
+timeline {
   width: 100%;
-  padding-bottom: 60rpx;
-  padding-left: 200rpx;
 }
 
-.timeline-point {
-  width: 15rpx;
-  height: 15rpx;
-  border-radius: 50%;
-  background-color: #a8e28b;
-  margin: 15rpx 20rpx;
-  border: 4rpx solid #e5fdddb7;
-  will-change: transform, opacity;
-  opacity: 0;
+.skill-content {
+  width: 100%;
 }
 
-.timeline-point-ani {
-    animation: tlPoint 0.2s linear 1.3s forwards;
+.progress {
+  margin-left: 120rpx;
+  margin-right: 240rpx;
 }
 
-.timeline-period {
-  color: #a8e28b;
+.progress-content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40rpx;
+  margin-top: 10rpx;
   font-size: 30rpx;
-  will-change: transform, opacity;
-  opacity: 0;
 }
 
-.timeline-period-ani {
-    animation: tlPeriod 0.3s linear 1.5s forwards;
-}
-
-.timeline-info {
-  will-change: transform, opacity;
-  opacity: 0;
-}
-
-.timeline-info-ani {
-    animation: tlInfo 0.3s ease-in-out 1.8s forwards;
+.progress-text {
+  color: #5a7b4a;
 }
 
 @keyframes fadeIn {
@@ -359,39 +342,6 @@
 }
 
 @keyframes profileContent {
-  0% {
-    transform: translateY(-100%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes tlPoint {
-  0% {
-    transform: scale(0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes tlPeriod {
-  0% {
-    transform: translateX(50%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes tlInfo {
   0% {
     transform: translateY(-100%);
   }
