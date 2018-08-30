@@ -1,0 +1,11 @@
+<import src="common/head.wxml" />
+<import src="common/foot.wxml" />
+
+<template name="project">
+  <template is="head" data="{{title: 'PROJECT', headTitleAni: animation.projectHeadTitle, headSplitAni: animation.projectHeadSplit}}" />
+  <view class="main-content">
+    <image class="title-img {{animation.projectTitleImg}}" src="{{image.project}}" mode="aspectFit"></image>
+    <timeline data="{{resume.projects}}" point-ani="{{animation.projectTimelinePoint}}" period-ani="{{animation.projectTimelinePeriod}}" info-ani="{{animation.projectTimelineInfo}}" line-ani="{{animation.projectTimelineLine}}"></timeline>
+  </view>
+  <template is="foot" />
+</template>

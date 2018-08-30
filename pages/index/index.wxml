@@ -4,6 +4,7 @@
 <import src="../template/profile.wxml" />
 <import src="../template/education.wxml" />
 <import src="../template/job.wxml" />
+<import src="../template/project.wxml" />
 <import src="../template/skill.wxml" />
 <import src="../template/works.wxml" />
 <import src="../template/contact.wxml" />
@@ -24,6 +25,9 @@
     </swiper-item>
     <swiper-item class="swiper-item">
       <template is="job" data="{{image, resume, animation}}" />
+    </swiper-item>
+    <swiper-item class="swiper-item">
+      <template is="project" data="{{image, resume, animation}}" />
     </swiper-item>
     <swiper-item class="swiper-item">
       <template is="skill" data="{{image, resume, animation, skills}}" />

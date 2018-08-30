@@ -21,6 +21,7 @@ const animation = {
   timelinePeriod: 'timeline-period-ani',
   timelineInfo: 'timeline-info-ani',
   timelineLine: 'timeline-line-ani',
+  worksImg: 'works-image-ani',
   qrcode: 'qrcode-ani',
   callme: 'call-me-ani',
   contactTitle: 'contact-title-ani',
@@ -35,11 +36,13 @@ Page({
     resume: {},
     avatar: app.globalData.avatar,
     image: {
+      cdn: imageCDN,
       start: `${imageCDN}resume.png`,
       about: `${imageCDN}about.png`,
       profile: `${imageCDN}profile.png`,
       education: `${imageCDN}education.png`,
       job: `${imageCDN}job.png`,
+      project: `${imageCDN}project.png`,
       skill: `${imageCDN}skill.png`,
       works: `${imageCDN}works.png`,
       contact: `${imageCDN}contact.png`,
@@ -65,33 +68,42 @@ Page({
       eduHeadTitle: '',
       eduHeadSplit: '',
       eduTitleImg: '',
+      eduTimelinePoint: '',
+      eduTimelinePeriod: '',
+      eduTimelineInfo: '',
+      eduTimelineLine: '',
       jobHeadTitle: '',
       jobHeadSplit: '',
       jobTitleImg: '',
+      jobTimelinePoint: '',
+      jobTimelinePeriod: '',
+      jobTimelineInfo: '',
+      jobTimelineLine: '',
+      projectHeadTitle: '',
+      projectHeadSplit: '',
+      projectTitleImg: '',
+      projectTimelinePoint: '',
+      projectTimelinePeriod: '',
+      projectTimelineInfo: '',
+      projectTimelineLine: '',
       skillHeadTitle: '',
       skillHeadSplit: '',
       skillTitleImg: '',
       worksHeadTitle: '',
       worksHeadSplit: '',
       worksTitleImg: '',
+      worksImg: '',
       contactHeadTitle: '',
       contactHeadSplit: '',
       contactTitleImg: '',
-      eduTimelinePoint: '',
-      eduTimelinePeriod: '',
-      eduTimelineInfo: '',
-      eduTimelineLine: '',
-      jobTimelinePoint: '',
-      jobTimelinePeriod: '',
-      jobTimelineInfo: '',
-      jobTimelineLine: '',
       qrcode: '',
       callme: '',
       contactTitle: '',
       contactValue: ''
     },
     current: 0,
-    skills: []
+    skills: [],
+    timeouts: []
   },
   onLoad: function() {
     const resume = app.globalData.resume
@@ -109,9 +121,6 @@ Page({
   },
   onShow: function() {
     this.setAnimation()
-  },
-  onHide: function() {
-    this.setAnimation(-1)
   },
   setAnimation: function(current) {
     current = current || this.data.current
@@ -146,47 +155,109 @@ Page({
       'animation.jobTimelinePeriod': current === 4 ? animation.timelinePeriod : '',
       'animation.jobTimelineInfo': current === 4 ? animation.timelineInfo : '',
       'animation.jobTimelineLine': current === 4 ? animation.timelineLine : '',
-      'animation.skillHeadTitle': current === 5 ? animation.headTitle : '',
-      'animation.skillHeadSplit': current === 5 ? animation.headSplit : '',
-      'animation.skillTitleImg': current === 5 ? animation.titleImg : '',
-      'animation.worksHeadTitle': current === 6 ? animation.headTitle : '',
-      'animation.worksHeadSplit': current === 6 ? animation.headSplit : '',
-      'animation.worksTitleImg': current === 6 ? animation.titleImg : '',
-      'animation.contactHeadTitle': current === 7 ? animation.headTitle : '',
-      'animation.contactHeadSplit': current === 7 ? animation.headSplit : '',
-      'animation.contactTitleImg': current === 7 ? animation.titleImg : '',
-      'animation.qrcode': current === 7 ? animation.qrcode : '',
-      'animation.callme': current === 7 ? animation.callme : '',
-      'animation.contactTitle': current === 7 ? animation.contactTitle : '',
-      'animation.contactValue': current === 7 ? animation.contactValue : ''
+      'animation.projectHeadTitle': current === 5 ? animation.headTitle : '',
+      'animation.projectHeadSplit': current === 5 ? animation.headSplit : '',
+      'animation.projectTitleImg': current === 5 ? animation.titleImg : '',
+      'animation.projectTimelinePoint': current === 5 ? animation.timelinePoint : '',
+      'animation.projectTimelinePeriod': current === 5 ? animation.timelinePeriod : '',
+      'animation.projectTimelineInfo': current === 5 ? animation.timelineInfo : '',
+      'animation.projectTimelineLine': current === 5 ? animation.timelineLine : '',
+      'animation.skillHeadTitle': current === 6 ? animation.headTitle : '',
+      'animation.skillHeadSplit': current === 6 ? animation.headSplit : '',
+      'animation.skillTitleImg': current === 6 ? animation.titleImg : '',
+      'animation.worksHeadTitle': current === 7 ? animation.headTitle : '',
+      'animation.worksHeadSplit': current === 7 ? animation.headSplit : '',
+      'animation.worksTitleImg': current === 7 ? animation.titleImg : '',
+      'animation.worksImg': current === 7 ? animation.worksImg : '',
+      'animation.contactHeadTitle': current === 8 ? animation.headTitle : '',
+      'animation.contactHeadSplit': current === 8 ? animation.headSplit : '',
+      'animation.contactTitleImg': current === 8 ? animation.titleImg : '',
+      'animation.qrcode': current === 8 ? animation.qrcode : '',
+      'animation.callme': current === 8 ? animation.callme : '',
+      'animation.contactTitle': current === 8 ? animation.contactTitle : '',
+      'animation.contactValue': current === 8 ? animation.contactValue : ''
     })
     this.setProgressAnimation(current)
   },
   setProgressAnimation: function(current) {
-    if (current === 5) {
-      const skills = this.data.resume.skills
-      for (let i = 0; i < skills.length; i++) {
-        setTimeout(() => {
-          this.setData({
-            skills: this.data.skills.concat([skills[i]])
-          })
-        }, 1300 + i * 800)
+    if (current === 6) {
+      for (let i of this.data.timeouts) {
+        clearTimeout(i)
       }
-    } else {
+      const skills = this.data.resume.skills
+      const temp = []
+      const timeouts = []
+      for (let i = 0; i < skills.length; i++) {
+        let timeout = setTimeout(() => {
+          temp.push(skills[i])
+          this.setData({
+            skills: temp
+          })
+        }, 1300 + i * 500)
+        timeouts.push(timeout)
+      }
       this.setData({
-        skills: []
+        timeouts
       })
     }
   },
   bindchange: function(e) {
     this.setData({
-      current: e.detail.current
+      current: e.detail.current,
+      skills: []
     })
     this.setAnimation()
+  },
+  previewImg: function(e) {
+    wx.previewImage({
+      current: e.currentTarget.dataset.src,
+      urls: this.data.resume.works.map(n => imageCDN + n),
+      success: res => {
+        console.log(res)
+      }
+    })
   },
   callMe: function() {
     wx.makePhoneCall({
       phoneNumber: this.data.resume.phone
+    })
+  },
+  saveQrcode: function() {
+    wx.showActionSheet({
+      itemList: ['保存图片'],
+      success: () => {
+        wx.getSetting({
+          success: res => {
+            if (!res.authSetting['scope.writePhotosAlbum']) {
+              wx.authorize({
+                scope: 'scope.writePhotosAlbum',
+                success: res => {
+                  this.downloadAndSaveQrcode()
+                }
+              })
+            } else {
+              this.downloadAndSaveQrcode()
+            }
+          }
+        })
+      }
+    })
+  },
+  downloadAndSaveQrcode: function() {
+    wx.downloadFile({
+      url: this.data.image.qrcode,
+      success: res => {
+        wx.saveImageToPhotosAlbum({
+          filePath: res.tempFilePath,
+          success: res => {
+            wx.showToast({
+              title: '保存成功',
+              icon: 'success',
+              duration: 2000
+            })
+          }
+        })
+      }
     })
   }
 })

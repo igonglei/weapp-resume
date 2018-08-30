@@ -190,6 +190,8 @@
   transform: translateY(-100%);
   text-indent: 60rpx;
   line-height: 1.8;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 .profile-content-ani {
@@ -270,6 +272,24 @@ timeline {
 
 .contact-value-ani {
   animation: fadeDown 0.4s linear 2.1s forwards;
+}
+
+.works-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.works-image {
+  width: 400rpx;
+  height: 200rpx;
+  margin-bottom: 50rpx;
+  margin-right: 100rpx;
+  will-change: transform, opacity;
+  opacity: 0;
+}
+
+.works-image-ani {
+  animation: fadeIn 0.3s linear 1.3s forwards, bounce 0.3s linear 1.3s forwards;
 }
 
 @keyframes fadeIn {

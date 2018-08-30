@@ -47,6 +47,11 @@
   animation: tlInfo 0.3s ease-in-out 1.8s forwards;
 }
 
+.timeline-info-desc {
+  color: #999;
+  font-size: 30rpx;
+}
+
 .timeline-line {
   background-color: #a8e28b;
   width: 3rpx;
