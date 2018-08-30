@@ -211,10 +211,7 @@ Page({
   previewImg: function(e) {
     wx.previewImage({
       current: e.currentTarget.dataset.src,
-      urls: this.data.resume.works.map(n => imageCDN + n),
-      success: res => {
-        console.log(res)
-      }
+      urls: this.data.resume.works.map(n => imageCDN + n)
     })
   },
   callMe: function() {
