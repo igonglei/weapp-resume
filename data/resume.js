@@ -5,7 +5,7 @@ module.exports = {
   "address": "武汉",
   "edu": "本科",
   "phone": "13100600034",
-  "intro": ["精通HTML5/CSS3/JQUERY，熟悉Vue/React/Bootstrap等前端框架，熟悉.Net/Nodejs等后端语言，熟悉MongoDB/Oracle等数据库，熟悉Linux、Nginx、Git使用。", "本人性格沉稳，待人真诚；工作认真负责，积极主动，能吃苦耐劳；学习能力强，勇于创新。"],
+  "intro": ["精通HTML5/CSS3/JQUERY，熟悉Vue/React/Bootstrap等前端框架，熟悉.Net/Nodejs等后端语言，熟悉MongoDB/MySQL等数据库，熟悉Linux、Nginx、Git的使用。", "本人性格沉稳，待人真诚；工作认真负责，积极主动，能吃苦耐劳；学习能力强，勇于创新。"],
   "education": [{
       "period": "2006.09 - 2010.06",
       "info": "石家庄铁道大学 本科"
@@ -73,7 +73,7 @@ module.exports = {
       "value": 60
     }
   ],
-  "works": ["owl-uti.png", "enveditor.png", "sde-order.png"],
+  "works": ["owl-uti.png", "sde-home.png", "sde-order.png"],
   "contact": [{
       "text": "EMAIL",
       "value": "gl20061041@hotmail.com"

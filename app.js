@@ -20,9 +20,6 @@ App({
         if (this.resumeReadyCallback) {
           this.resumeReadyCallback(res)
         }
-      },
-      fail: err => {
-        console.log(err)
       }
     })
   },

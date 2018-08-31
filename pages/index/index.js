@@ -256,5 +256,8 @@ Page({
         })
       }
     })
+  },
+  longpressCover: function() {
+    app.getResume()
   }
 })

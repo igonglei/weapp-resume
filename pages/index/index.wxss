@@ -188,7 +188,7 @@
   will-change: transform, opacity;
   opacity: 0;
   transform: translateY(-100%);
-  text-indent: 60rpx;
+  text-indent: 50rpx;
   line-height: 1.8;
   word-wrap: break-word;
   word-break: break-all;
