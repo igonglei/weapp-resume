@@ -16,8 +16,9 @@
   width: 15rpx;
   height: 15rpx;
   background-color: #a8e28b;
-  margin: 15rpx 20rpx;
-  border: 5rpx solid #dcdfda63;
+  margin-top: 15rpx;
+  margin-right: 20rpx;
+  border: 5rpx solid rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   will-change: transform, opacity;
   opacity: 0;
@@ -57,10 +58,11 @@
   width: 3rpx;
   height: 500rpx;
   position: absolute;
-  left: 130rpx;
+  left: 110rpx;
   top: 20rpx;
   will-change: transform, opacity;
   opacity: 0;
+  transform: translateX(-50%);
 }
 
 .timeline-line::after {
@@ -68,9 +70,10 @@
   content: '';
   position: absolute;
   bottom: 0;
-  left: -3rpx;
-  width: 10rpx;
-  height: 10rpx;
+  left: 0;
+  transform: translateX(-50%);
+  width: 12rpx;
+  height: 12rpx;
   border-radius: 50%;
   background-color: #a8e28b;
 }

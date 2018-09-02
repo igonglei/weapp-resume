@@ -6,7 +6,7 @@
   <view class="main-content">
     <image class="title-img {{animation.aboutTitleImg}}" src="{{image.about}}" mode="aspectFit"></image>
     <view class="userinfo-avatar">
-      <image class="avatar {{animation.avatar}}" src="{{avatar}}"></image>
+      <image wx:if="{{resume.avatar}}" class="avatar {{animation.avatar}}" src="{{image.cdn+resume.avatar}}" data-src="{{image.cdn+resume.avatar}}" bindtap="previewAvatar"></image>
       <view class="avatar-circle {{animation.avatarCircle}}"></view>
     </view>
     <view class="userinfo-text">

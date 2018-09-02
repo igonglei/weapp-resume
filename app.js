@@ -1,9 +1,12 @@
 //app.js
-const { fileHost, imageCDN, localMode } = require('config')
+const { fileHost, localMode } = require('config')
 
 App({
   onLaunch: function () {
     this.getResume()
+    wx.showShareMenu({
+      withShareTicket: true
+    })
   },
   //获取简历信息
   getResume() {
@@ -24,7 +27,6 @@ App({
     })
   },
   globalData: {
-    resume: null,
-    avatar: `${imageCDN}avatar.jpg`
+    resume: null
   }
 })

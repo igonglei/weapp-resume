@@ -6,7 +6,7 @@
   <view class="main-content">
     <image class="title-img {{animation.contactTitleImg}}" src="{{image.contact}}" mode="aspectFit"></image>
     <view class="contact-content">
-      <image class="qrcode {{animation.qrcode}}" src="{{image.qrcode}}" mode="aspectFit" bindlongpress="saveQrcode"></image>
+      <image wx:if="{{resume.qrcode}}" class="qrcode {{animation.qrcode}}" src="{{image.cdn+resume.qrcode}}" mode="aspectFit" bindlongpress="saveQrcode"></image>
       <view class="contact-item" wx:for="{{resume.contact}}" wx:key="text">
         <view class="contact-title  {{animation.contactTitle}}">{{item.text}}</view>
         <view class="contact-value {{animation.contactValue}}">{{item.value}}</view>

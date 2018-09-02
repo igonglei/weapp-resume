@@ -289,7 +289,24 @@ timeline {
 }
 
 .works-image-ani {
-  animation: fadeIn 0.3s linear 1.3s forwards, bounce 0.3s linear 1.3s forwards;
+  animation: popUp 0.4s ease-in 1.3s forwards;
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(0.4);
+  }
+
+  70% {
+    transform: scale(1.1);
+    opacity: 0.8;
+    animation-timing-function: ease-out;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn {

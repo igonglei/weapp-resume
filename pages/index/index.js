@@ -34,7 +34,7 @@ const app = getApp()
 Page({
   data: {
     resume: {},
-    avatar: app.globalData.avatar,
+    current: 0,
     image: {
       cdn: imageCDN,
       start: `${imageCDN}resume.png`,
@@ -45,8 +45,7 @@ Page({
       project: `${imageCDN}project.png`,
       skill: `${imageCDN}skill.png`,
       works: `${imageCDN}works.png`,
-      contact: `${imageCDN}contact.png`,
-      qrcode: `${imageCDN}qrcode.jpg`
+      contact: `${imageCDN}contact.png`
     },
     animation: {
       startImg: '',
@@ -101,7 +100,6 @@ Page({
       contactTitle: '',
       contactValue: ''
     },
-    current: 0,
     skills: [],
     timeouts: []
   },
@@ -208,7 +206,12 @@ Page({
     })
     this.setAnimation()
   },
-  previewImg: function(e) {
+  previewAvatar: function(e) {
+    wx.previewImage({
+      urls: [e.currentTarget.dataset.src]
+    })
+  },
+  previewWorks: function(e) {
     wx.previewImage({
       current: e.currentTarget.dataset.src,
       urls: this.data.resume.works.map(n => imageCDN + n)
