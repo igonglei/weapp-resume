@@ -1,5 +1,5 @@
 <!--components/timeline.wxml-->
-<view class="timeline">
+<view class="timeline" wx:if="{{data.length}}">
   <view class="timeline-item" wx:for="{{data}}" wx:key="period">
     <view class="timeline-point {{pointAni}}" style="animation-delay:{{index+1.3}}s"></view>
     <view class="timeline-content">

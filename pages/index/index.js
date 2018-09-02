@@ -182,7 +182,7 @@ Page({
       for (let i of this.data.timeouts) {
         clearTimeout(i)
       }
-      const skills = this.data.resume.skills
+      const skills = this.data.resume.skills || []
       const temp = []
       const timeouts = []
       for (let i = 0; i < skills.length; i++) {

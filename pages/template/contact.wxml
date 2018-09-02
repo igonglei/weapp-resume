@@ -11,7 +11,7 @@
         <view class="contact-title  {{animation.contactTitle}}">{{item.text}}</view>
         <view class="contact-value {{animation.contactValue}}">{{item.value}}</view>
       </view>
-      <button class="call-me {{animation.callme}}" type="primary" bindtap="callMe">一键拨号</button>
+      <button wx:if="{{resume.phone}}" class="call-me {{animation.callme}}" type="primary" bindtap="callMe">一键拨号</button>
     </view>
   </view>
   <template is="foot" />

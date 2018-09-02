@@ -1,4 +1,5 @@
 module.exports = {
+  "slogan": ["放飞梦想", "扬帆起航"],
   "avatar": "gonglei.jpeg",
   "name": "龚磊",
   "job": "前端工程师",
