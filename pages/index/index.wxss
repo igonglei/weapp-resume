@@ -102,8 +102,9 @@
   font-weight: 700;
   font-size: 50rpx;
   padding-bottom: 10rpx;
-  will-change: transform;
+  will-change: transform, opacity;
   transform: translateX(-100%);
+  opacity: 0;
 }
 
 .head-title-ani {
@@ -114,7 +115,8 @@
   width: 0;
   height: 6rpx;
   background-color: #a8e28b;
-  will-change: transform;
+  will-change: transform, opacity;
+  opacity: 0;
 }
 
 .head-split-ani {
@@ -379,6 +381,7 @@ timeline {
 
   100% {
     transform: translateX(60rpx);
+    opacity: 1;
   }
 }
 
@@ -389,6 +392,7 @@ timeline {
 
   100% {
     width: 120rpx;
+    opacity: 1;
   }
 }
 
@@ -405,7 +409,6 @@ timeline {
 
 @keyframes startText {
   0% {
-    opacity: 0;
     transform: rotate(0);
   }
 
@@ -418,7 +421,6 @@ timeline {
 @keyframes titleImg {
   0% {
     right: 0;
-    opacity: 0;
     transform: rotate(45deg);
   }
 
