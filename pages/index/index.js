@@ -45,7 +45,8 @@ Page({
       project: `${imageCDN}project.png`,
       skill: `${imageCDN}skill.png`,
       works: `${imageCDN}works.png`,
-      contact: `${imageCDN}contact.png`
+      contact: `${imageCDN}contact.png`,
+      share: `${imageCDN}share.jpg`
     },
     animation: {
       startImg: '',
@@ -119,6 +120,11 @@ Page({
   },
   onShow: function() {
     this.setAnimation()
+  },
+  onShareAppMessage: function() {
+    return {
+      imageUrl: this.data.image.share
+    }
   },
   setAnimation: function(current) {
     current = current || this.data.current

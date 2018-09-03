@@ -1,12 +1,11 @@
 /**app.wxss**/
 
-@import "./style/weui.wxss";
-
 page {
   background-image: url(https://lg-npha00ki-1257320081.cos.ap-shanghai.myqcloud.com/bg.jpg);
   background-color: #000;
   height: 100%;
   font-size: 36rpx;
+  font-family: -apple-system-font, Helvetica Neue, sans-serif;
   line-height: 1.6;
   color: #fff;
 }
@@ -36,10 +35,12 @@ page {
     opacity: 1;
     transform: rotate(45deg) translate(0rpx, 0rpx);
   }
+
   50% {
     opacity: 0.5;
     transform: rotate(45deg) translate(-15rpx, -15rpx);
   }
+
   100% {
     opacity: 0;
     transform: rotate(45deg) translate(-30rpx, -30rpx);

@@ -7,9 +7,6 @@ const {
 App({
   onLaunch: function() {
     this.getResume()
-    wx.showShareMenu({
-      withShareTicket: true
-    })
   },
   //获取简历信息
   getResume() {

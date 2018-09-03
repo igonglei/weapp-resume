@@ -1,2 +1,2 @@
 # weapp-resume
-A wechat mini app
+gonglei's personal resume
