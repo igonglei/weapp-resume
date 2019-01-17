@@ -1,42 +1,10 @@
 <!--index.wxml-->
-<import src="../template/cover.wxml" />
-<import src="../template/about.wxml" />
-<import src="../template/profile.wxml" />
-<import src="../template/education.wxml" />
-<import src="../template/job.wxml" />
-<import src="../template/project.wxml" />
-<import src="../template/skill.wxml" />
-<import src="../template/works.wxml" />
-<import src="../template/contact.wxml" />
+<include src="../template/index.wxml" />
 
 <view class="container">
-  <swiper class="swiper" indicator-dots="{{true}}" vertical="{{true}}" indicator-color="rgba(255, 255, 255, 0.5)" indicator-active-color="#a8e28b" bindchange="bindchange" current="0">
-    <swiper-item class="swiper-item">
-      <template is="cover" data="{{image, resume, animation}}" />
-    </swiper-item>
-    <swiper-item class="swiper-item">
-      <template is="about" data="{{image, resume, animation}}" />
-    </swiper-item>
-    <swiper-item class="swiper-item">
-      <template is="profile" data="{{image, resume, animation}}" />
-    </swiper-item>
-    <swiper-item class="swiper-item">
-      <template is="education" data="{{image, resume, animation}}" />
-    </swiper-item>
-    <swiper-item class="swiper-item">
-      <template is="job" data="{{image, resume, animation}}" />
-    </swiper-item>
-    <swiper-item class="swiper-item">
-      <template is="project" data="{{image, resume, animation}}" />
-    </swiper-item>
-    <swiper-item class="swiper-item">
-      <template is="skill" data="{{image, resume, animation, skills}}" />
-    </swiper-item>
-    <swiper-item class="swiper-item">
-      <template is="works" data="{{image, resume, animation}}" />
-    </swiper-item>
-    <swiper-item class="swiper-item">
-      <template is="contact" data="{{image, resume, animation}}" />
+  <swiper class="swiper" indicator-dots="{{true}}" vertical="{{true}}" indicator-color="rgba(255, 255, 255, 0.5)" indicator-active-color="#a8e28b" bindchange="bindchange" current="{{current}}">
+    <swiper-item class="swiper-item" wx:for="{{resume.pages}}" wx:for-item="page" wx:key="name">
+      <template is="{{page.name}}" data="{{page, resume, animation, skills}}" />
     </swiper-item>
   </swiper>
 </view>

@@ -1,0 +1,12 @@
+<template name="contact">
+  <layout head-title="{{page.title}}" title-img-src="{{resume.cdn+page.titleImage}}" head-title-ani="{{animation.contactHeadTitle}}" head-split-ani="{{animation.contactHeadSplit}}" title-img-ani="{{animation.contactTitleImg}}">
+    <view class="contact-content">
+      <image wx:if="{{resume.qrcode}}" class="qrcode {{animation.qrcode}}" src="{{resume.cdn+resume.qrcode}}" data-src="{{resume.cdn+resume.qrcode}}" mode="aspectFit" bindlongpress="saveQrcode" bindtap="previewImage"></image>
+      <view class="contact-item" wx:for="{{resume.contact}}" wx:key="text">
+        <view class="contact-title  {{animation.contactTitle}}">{{item.text}}</view>
+        <view class="contact-value {{animation.contactValue}}">{{item.value}}</view>
+      </view>
+      <button wx:if="{{resume.phone}}" class="call-me {{animation.callme}}" type="primary" bindtap="callMe">{{resume.callText}}</button>
+    </view>
+  </layout>
+</template>

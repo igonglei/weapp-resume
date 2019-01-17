@@ -1,10 +1,5 @@
-<import src="common/head.wxml" />
-<import src="common/foot.wxml" />
-
 <template name="skill">
-  <template is="head" data="{{title: 'SKILL', headTitleAni: animation.skillHeadTitle, headSplitAni: animation.skillHeadSplit}}" />
-  <view class="main-content">
-    <image class="title-img {{animation.skillTitleImg}}" src="{{image.skill}}" mode="aspectFit"></image>
+  <layout head-title="{{page.title}}" title-img-src="{{resume.cdn+page.titleImage}}" head-title-ani="{{animation.skillHeadTitle}}" head-split-ani="{{animation.skillHeadSplit}}" title-img-ani="{{animation.skillTitleImg}}">
     <view class="skill-content">
       <block wx:for="{{skills}}" wx:key="text">
         <progress class="progress" percent="{{item.value}}" stroke-width="12" activeColor="#a8e28c" backgroundColor="#151515" active />
@@ -14,6 +9,5 @@
         </view>
       </block>
     </view>
-  </view>
-  <template is="foot" />
+  </layout>
 </template>

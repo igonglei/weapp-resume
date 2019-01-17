@@ -1,0 +1,9 @@
+<template name="profile">
+  <layout head-title="{{page.title}}" title-img-src="{{resume.cdn+page.titleImage}}" head-title-ani="{{animation.profileHeadTitle}}" head-split-ani="{{animation.profileHeadSplit}}" title-img-ani="{{animation.profileTitleImg}}">
+    <view class="profile-content {{animation.profileContent}}">
+      <view wx:for="{{resume.intro}}" wx:key="*this">
+        {{item}}
+      </view>
+    </view>
+  </layout>
+</template>

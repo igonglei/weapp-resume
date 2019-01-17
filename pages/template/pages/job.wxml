@@ -1,0 +1,5 @@
+<template name="job">
+  <layout head-title="{{page.title}}" title-img-src="{{resume.cdn+page.titleImage}}" head-title-ani="{{animation.jobHeadTitle}}" head-split-ani="{{animation.jobHeadSplit}}" title-img-ani="{{animation.jobTitleImg}}">
+    <timeline data="{{resume.jobs}}" point-ani="{{animation.jobTimelinePoint}}" period-ani="{{animation.jobTimelinePeriod}}" info-ani="{{animation.jobTimelineInfo}}" line-ani="{{animation.jobTimelineLine}}"></timeline>
+  </layout>
+</template>

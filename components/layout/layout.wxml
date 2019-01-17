@@ -1,0 +1,12 @@
+<!--components/layout.wxml-->
+<view class="layout">
+  <view class="head" wx:if="{{showHead}}">
+    <view class="head-title {{headTitleAni}}">{{headTitle}}</view>
+    <view class="head-split {{headSplitAni}}"></view>
+  </view>
+  <view class="main-content">
+    <image wx:if="{{showTitleImg}}" class="title-img {{titleImgAni}}" src="{{titleImgSrc}}" mode="aspectFit"></image>
+    <slot></slot>
+  </view>
+  <view class="arrow-top"></view>
+</view>

@@ -1,0 +1,10 @@
+<import src="pages/cover.wxml" />
+<import src="pages/about.wxml" />
+<import src="pages/profile.wxml" />
+<import src="pages/education.wxml" />
+<import src="pages/job.wxml" />
+<import src="pages/project.wxml" />
+<import src="pages/skill.wxml" />
+<import src="pages/works.wxml" />
+<import src="pages/works1.wxml" />
+<import src="pages/contact.wxml" />
