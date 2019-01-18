@@ -4,7 +4,7 @@
 <view class="container" style="background-image:url({{resume.cdn+resume.bg}});">
   <swiper class="swiper" indicator-dots="{{true}}" vertical="{{true}}" indicator-color="rgba(255, 255, 255, 0.5)" indicator-active-color="#a8e28b" bindchange="bindchange" current="{{current}}">
     <swiper-item class="swiper-item" wx:for="{{resume.pages}}" wx:for-item="page" wx:key="name">
-      <template is="{{page.name}}" data="{{page, resume, animation, skills}}" />
+      <template wx:if="{{page.show}}" is="{{page.name}}" data="{{page, resume, animation, skills}}" />
     </swiper-item>
   </swiper>
 </view>

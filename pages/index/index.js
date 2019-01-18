@@ -17,9 +17,10 @@ Page({
     },
     current: 0,
     animation: initAnimation,
-    skills: [],
-    timeouts: [],
-    isShow: false
+    skills: []
+  },
+  customData: {
+    timeouts: []
   },
   onLoad: function() {
     const resume = app.globalData.resume
@@ -28,7 +29,6 @@ Page({
     } else {
       app.resumeReadyCallback = res => {
         this.setResumeData(res.data)
-        this.setAnimation()
       }
     }
   },
@@ -38,22 +38,15 @@ Page({
     }
     this.setData({
       resume,
-      current: resume.startPage
+      ...this.getCurrent(resume.startPage)
     })
+    this.setAnimation()
   },
-  onShow: function() {
-    const {
-      isShow,
-      resume: {
-        pages
-      }
-    } = this.data
-    if (!isShow && pages.length > 0) {
-      this.setAnimation()
+  getCurrent: function(current) {
+    return {
+      current,
+      [`resume.pages[${current}].show`]: true
     }
-    this.setData({
-      isShow: true
-    })
   },
   setAnimation: function() {
     this.setData({
@@ -74,13 +67,10 @@ Page({
     const curAnimation = getAnimation(curPage)
     this.setData(curAnimation)
     if (curPage === 'skill') {
-      this.setProgressAnimation()
+      this.setSkillAnimation()
     }
   },
-  setProgressAnimation: function() {
-    for (let i of this.data.timeouts) {
-      clearTimeout(i)
-    }
+  setSkillAnimation: function() {
     const skills = this.data.resume.skills || []
     const temp = []
     const timeouts = []
@@ -93,13 +83,18 @@ Page({
       }, 1300 + i * 500)
       timeouts.push(timeout)
     }
-    this.setData({
-      timeouts
-    })
+    this.customData.timeouts = timeouts
+  },
+  clearSkillAnimation: function() {
+    for (let i of this.customData.timeouts) {
+      clearTimeout(i)
+    }
+    this.customData.timeouts = []
   },
   bindchange: function(e) {
+    this.clearSkillAnimation()
     this.setData({
-      current: e.detail.current,
+      ...this.getCurrent(e.detail.current),
       skills: []
     })
     this.setAnimation()
