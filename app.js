@@ -2,7 +2,7 @@
 import config from 'config'
 
 App({
-  onShow: function() {
+  onLaunch: function() {
     this.getResume()
   },
   //获取简历信息
@@ -11,6 +11,7 @@ App({
       success: res => {
         const {
           fileHost,
+          fileName,
           localMode
         } = config
         if (localMode || res.networkType === 'none') {
@@ -18,10 +19,7 @@ App({
           return
         }
         wx.request({
-          url: `${fileHost}resume.json`,
-          data: {
-            ts: new Date().valueOf()
-          },
+          url: fileHost + fileName,
           success: res => {
             this.globalData.resume = res.data
             if (this.resumeReadyCallback) {

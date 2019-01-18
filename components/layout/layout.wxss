@@ -70,23 +70,22 @@
   border-left: 10rpx solid rgba(255, 255, 255, 0.6);
   border-top: 10rpx solid rgba(255, 255, 255, 0.6);
   will-change: transform;
-  border-radius: 4rpx;
   animation: top 1s linear infinite;
 }
 
 @keyframes top {
   0% {
     opacity: 1;
-    transform: rotate(45deg) translate(0rpx, 0rpx);
+    transform: rotate(45deg) translate(0rpx, 0rpx) scale(1);
   }
 
   50% {
     opacity: 0.5;
-    transform: rotate(45deg) translate(-15rpx, -15rpx);
+    transform: rotate(45deg) translate(-15rpx, -15rpx) scale(.98);
   }
 
   100% {
     opacity: 0;
-    transform: rotate(45deg) translate(-30rpx, -30rpx);
+    transform: rotate(45deg) translate(-30rpx, -30rpx) scale(.96);
   }
 }

@@ -10,7 +10,10 @@ const app = getApp()
 Page({
   data: {
     resume: {
-      pages: []
+      startPage: 0,
+      pages: [],
+      cdn: '',
+      bg: ''
     },
     current: 0,
     animation: initAnimation,
@@ -25,31 +28,32 @@ Page({
     } else {
       app.resumeReadyCallback = res => {
         this.setResumeData(res.data)
+        this.setAnimation()
       }
     }
   },
   setResumeData: function(resume) {
+    resume = { ...this.data.resume,
+      ...resume
+    }
     this.setData({
       resume,
       current: resume.startPage
     })
   },
   onShow: function() {
-    if (!this.data.isShow) {
+    const {
+      isShow,
+      resume: {
+        pages
+      }
+    } = this.data
+    if (!isShow && pages.length > 0) {
       this.setAnimation()
     }
     this.setData({
       isShow: true
     })
-  },
-  onShareAppMessage: function() {
-    const {
-      cdn,
-      shareImage
-    } = this.data.resume
-    return {
-      imageUrl: cdn + shareImage
-    }
   },
   setAnimation: function() {
     this.setData({
@@ -64,6 +68,9 @@ Page({
     const {
       name: curPage
     } = pages[current] || {}
+    if (!curPage) {
+      return
+    }
     const curAnimation = getAnimation(curPage)
     this.setData(curAnimation)
     if (curPage === 'skill') {
@@ -96,6 +103,15 @@ Page({
       skills: []
     })
     this.setAnimation()
+  },
+  onShareAppMessage: function() {
+    const {
+      cdn,
+      shareImage
+    } = this.data.resume
+    return {
+      imageUrl: cdn + shareImage
+    }
   },
   previewImage: function(e) {
     wx.previewImage({
@@ -161,8 +177,5 @@ Page({
         })
       }
     })
-  },
-  longpressCover: function() {
-    app.getResume()
   }
 })

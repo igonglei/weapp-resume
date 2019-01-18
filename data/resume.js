@@ -1,5 +1,6 @@
 module.exports = {
-  "cdn": 'https://lg-npha00ki-1257320081.cos.ap-shanghai.myqcloud.com/',
+  "cdn": "https://lg-npha00ki-1257320081.cos.ap-shanghai.myqcloud.com/",
+  "bg": "bg.jpg",
   "startPage": 0,
   "pages": [{
     "name": "cover"
