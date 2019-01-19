@@ -1,2 +1,3 @@
 # weapp-resume
-gonglei's personal resume
+雷公的个人简历
+
