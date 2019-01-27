@@ -66,7 +66,7 @@ module.exports = {
   "phone": "13100600034",
   "qrcode": "qrcode.jpg",
   "intro": [
-    "精通HTML5/CSS3/JQUERY，熟悉React/Vue等前端框架，熟悉.Net/Nodejs等后端开发，熟悉MongoDB/MySQL等数据库开发，熟悉微信小程序开发，熟悉Linux/Nginx/Git的使用。",
+    "精通HTML5/CSS3/jQuery，熟悉React/Vue/Bootstrap等前端框架，熟悉.Net/Nodejs等后端开发，熟悉MongoDB/MySQL等数据库开发，熟悉微信小程序开发，熟悉Linux/Nginx/Git的使用。",
     "本人性格沉稳，待人真诚；工作认真负责，积极主动，能吃苦耐劳；学习能力强，勇于创新。"
   ],
   "education": [{
@@ -121,19 +121,19 @@ module.exports = {
       "value": 80
     },
     {
-      "text": "REACT",
+      "text": "React",
       "value": 70
     },
     {
-      "text": "VUE",
+      "text": "Vue",
       "value": 70
     },
     {
-      "text": "JQUERY",
+      "text": "jQuery",
       "value": 80
     },
     {
-      "text": "NODEJS",
+      "text": "Nodejs",
       "value": 60
     },
     {
