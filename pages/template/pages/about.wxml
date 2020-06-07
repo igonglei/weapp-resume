@@ -1,7 +1,7 @@
 <template name="about">
-  <layout head-title="{{page.title}}" title-img-src="{{resume.cdn+page.titleImage}}" head-title-ani="{{animation.aboutHeadTitle}}" head-split-ani="{{animation.aboutHeadSplit}}" title-img-ani="{{animation.aboutTitleImg}}">
+  <layout head-title="{{page.title}}" title-img-src="{{resume.imgPath+page.titleImage}}" head-title-ani="{{animation.aboutHeadTitle}}" head-split-ani="{{animation.aboutHeadSplit}}" title-img-ani="{{animation.aboutTitleImg}}">
     <view class="userinfo-avatar" wx:if="{{resume.avatar}}">
-      <image class="avatar {{animation.avatar}}" src="{{resume.cdn+resume.avatar}}" data-src="{{resume.cdn+resume.avatar}}" bindtap="previewImage" lazy-load="{{true}}"></image>
+      <image class="avatar {{animation.avatar}}" src="{{resume.imgPath+resume.avatar}}" data-src="{{resume.imgPath+resume.avatar}}" bindtap="previewImage" lazy-load="{{true}}"></image>
       <view class="avatar-circle {{animation.avatarCircle}}"></view>
     </view>
     <view class="userinfo-text">

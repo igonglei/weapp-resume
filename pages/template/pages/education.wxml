@@ -1,5 +1,5 @@
 <template name="education">
-  <layout head-title="{{page.title}}" title-img-src="{{resume.cdn+page.titleImage}}" head-title-ani="{{animation.eduHeadTitle}}" head-split-ani="{{animation.eduHeadSplit}}" title-img-ani="{{animation.eduTitleImg}}">
+  <layout head-title="{{page.title}}" title-img-src="{{resume.imgPath+page.titleImage}}" head-title-ani="{{animation.eduHeadTitle}}" head-split-ani="{{animation.eduHeadSplit}}" title-img-ani="{{animation.eduTitleImg}}">
     <timeline data="{{resume.education}}" point-ani="{{animation.eduTimelinePoint}}" period-ani="{{animation.eduTimelinePeriod}}" info-ani="{{animation.eduTimelineInfo}}" line-ani="{{animation.eduTimelineLine}}"></timeline>
   </layout>
 </template>

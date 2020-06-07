@@ -1,0 +1,5 @@
+<template name="project1">
+  <layout head-title="{{page.title}}" title-img-src="{{resume.imgPath+page.titleImage}}" head-title-ani="{{animation.project1HeadTitle}}" head-split-ani="{{animation.project1HeadSplit}}" title-img-ani="{{animation.project1TitleImg}}">
+    <timeline data="{{resume.projects1}}" point-ani="{{animation.project1TimelinePoint}}" period-ani="{{animation.project1TimelinePeriod}}" info-ani="{{animation.project1TimelineInfo}}" line-ani="{{animation.project1TimelineLine}}"></timeline>
+  </layout>
+</template>

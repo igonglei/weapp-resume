@@ -1,0 +1,9 @@
+<template name="works2">
+  <layout head-title="{{page.title}}" title-img-src="{{resume.imgPath+page.titleImage}}" head-title-ani="{{animation.works2HeadTitle}}" head-split-ani="{{animation.works2HeadSplit}}" title-img-ani="{{animation.works2TitleImg}}">
+    <view class="works-content">
+      <block wx:for="{{resume.works2limit}}" wx:key="src">
+        <image src="{{resume.workPath+item.project}}/{{item.cover}}" data-src="{{resume.workPath+item.project}}/{{item.src}}" class="works-image {{animation.works2Img}}" style="animation-delay:{{index/2+1.3}}s" data-works="{{resume.works2}}" bindtap="previewWorks" lazy-load="{{true}}"></image>
+      </block>
+    </view>
+  </layout>
+</template>

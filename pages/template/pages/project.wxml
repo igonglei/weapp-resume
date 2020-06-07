@@ -1,5 +1,5 @@
 <template name="project">
-  <layout head-title="{{page.title}}" title-img-src="{{resume.cdn+page.titleImage}}" head-title-ani="{{animation.projectHeadTitle}}" head-split-ani="{{animation.projectHeadSplit}}" title-img-ani="{{animation.projectTitleImg}}">
+  <layout head-title="{{page.title}}" title-img-src="{{resume.imgPath+page.titleImage}}" head-title-ani="{{animation.projectHeadTitle}}" head-split-ani="{{animation.projectHeadSplit}}" title-img-ani="{{animation.projectTitleImg}}">
     <timeline data="{{resume.projects}}" point-ani="{{animation.projectTimelinePoint}}" period-ani="{{animation.projectTimelinePeriod}}" info-ani="{{animation.projectTimelineInfo}}" line-ani="{{animation.projectTimelineLine}}"></timeline>
   </layout>
 </template>

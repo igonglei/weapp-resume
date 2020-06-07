@@ -2,29 +2,32 @@
 import config from 'config'
 
 App({
-  onLaunch: function() {
+  onLaunch: function () {
     this.getResume()
   },
   //获取简历信息
   getResume() {
     wx.getNetworkType({
       success: res => {
+        const setResume = data => {
+          this.globalData.resume = data
+          if (this.resumeReadyCallback) {
+            this.resumeReadyCallback(data)
+          }
+        }
         const {
-          fileHost,
-          fileName,
+          dataPath,
+          dataFile,
           localMode
         } = config
         if (localMode || res.networkType === 'none') {
-          this.globalData.resume = require('data/resume.js')
+          setResume(require('data/resume.js'))
           return
         }
         wx.request({
-          url: fileHost + fileName,
+          url: dataPath + dataFile,
           success: res => {
-            this.globalData.resume = res.data
-            if (this.resumeReadyCallback) {
-              this.resumeReadyCallback(res)
-            }
+            setResume(res.data)
           }
         })
       }

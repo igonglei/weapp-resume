@@ -4,7 +4,9 @@
 <import src="pages/education.wxml" />
 <import src="pages/job.wxml" />
 <import src="pages/project.wxml" />
+<import src="pages/project1.wxml" />
 <import src="pages/skill.wxml" />
 <import src="pages/works.wxml" />
 <import src="pages/works1.wxml" />
+<import src="pages/works2.wxml" />
 <import src="pages/contact.wxml" />

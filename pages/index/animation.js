@@ -23,6 +23,29 @@ const animation = {
   contactValue: 'contact-value-ani'
 }
 
+const getProjectAni = (no = '', isInit = false) => {
+  const prefix = isInit ? '' : 'animation.'
+  return {
+    [`${prefix}project${no}HeadTitle`]: isInit ? '' : animation.headTitle,
+    [`${prefix}project${no}HeadSplit`]: isInit ? '' : animation.headSplit,
+    [`${prefix}project${no}TitleImg`]: isInit ? '' : animation.titleImg,
+    [`${prefix}project${no}TimelinePoint`]: isInit ? '' : animation.timelinePoint,
+    [`${prefix}project${no}TimelinePeriod`]: isInit ? '' : animation.timelinePeriod,
+    [`${prefix}project${no}TimelineInfo`]: isInit ? '' : animation.timelineInfo,
+    [`${prefix}project${no}TimelineLine`]: isInit ? '' : animation.timelineLine
+  }
+}
+
+const getWorkAni = (no = '', isInit = false) => {
+  const prefix = isInit ? '' : 'animation.'
+  return {
+    [`${prefix}works${no}HeadTitle`]: isInit ? '' : animation.headTitle,
+    [`${prefix}works${no}HeadSplit`]: isInit ? '' : animation.headSplit,
+    [`${prefix}works${no}TitleImg`]: isInit ? '' : animation.titleImg,
+    [`${prefix}works${no}Img`]: isInit ? '' : animation.worksImg
+  }
+}
+
 export const initAnimation = {
   startImg: '',
   startText: '',
@@ -54,24 +77,14 @@ export const initAnimation = {
   jobTimelinePeriod: '',
   jobTimelineInfo: '',
   jobTimelineLine: '',
-  projectHeadTitle: '',
-  projectHeadSplit: '',
-  projectTitleImg: '',
-  projectTimelinePoint: '',
-  projectTimelinePeriod: '',
-  projectTimelineInfo: '',
-  projectTimelineLine: '',
+  ...getProjectAni('', true),
+  ...getProjectAni(1, true),
   skillHeadTitle: '',
   skillHeadSplit: '',
   skillTitleImg: '',
-  worksHeadTitle: '',
-  worksHeadSplit: '',
-  worksTitleImg: '',
-  worksImg: '',
-  works1HeadTitle: '',
-  works1HeadSplit: '',
-  works1TitleImg: '',
-  works1Img: '',
+  ...getWorkAni('', true),
+  ...getWorkAni(1, true),
+  ...getWorkAni(2, true),
   contactHeadTitle: '',
   contactHeadSplit: '',
   contactTitleImg: '',
@@ -135,15 +148,10 @@ export function getAnimation(curPage) {
       }
       break;
     case 'project':
-      curAnimation = {
-        'animation.projectHeadTitle': animation.headTitle,
-        'animation.projectHeadSplit': animation.headSplit,
-        'animation.projectTitleImg': animation.titleImg,
-        'animation.projectTimelinePoint': animation.timelinePoint,
-        'animation.projectTimelinePeriod': animation.timelinePeriod,
-        'animation.projectTimelineInfo': animation.timelineInfo,
-        'animation.projectTimelineLine': animation.timelineLine,
-      }
+      curAnimation = getProjectAni()
+      break;
+    case 'project1':
+      curAnimation = getProjectAni(1)
       break;
     case 'skill':
       curAnimation = {
@@ -153,20 +161,13 @@ export function getAnimation(curPage) {
       }
       break;
     case 'works':
-      curAnimation = {
-        'animation.worksHeadTitle': animation.headTitle,
-        'animation.worksHeadSplit': animation.headSplit,
-        'animation.worksTitleImg': animation.titleImg,
-        'animation.worksImg': animation.worksImg,
-      }
+      curAnimation = getWorkAni()
       break;
     case 'works1':
-      curAnimation = {
-        'animation.works1HeadTitle': animation.headTitle,
-        'animation.works1HeadSplit': animation.headSplit,
-        'animation.works1TitleImg': animation.titleImg,
-        'animation.works1Img': animation.worksImg,
-      }
+      curAnimation = getWorkAni(1)
+      break;
+    case 'works2':
+      curAnimation = getWorkAni(2)
       break;
     case 'contact':
       curAnimation = {

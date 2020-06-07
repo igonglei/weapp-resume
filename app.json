@@ -9,5 +9,6 @@
     "navigationStyle": "custom",
     "backgroundColor": "transparent",
     "backgroundTextStyle": "light"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

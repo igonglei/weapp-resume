@@ -1,4 +1,5 @@
 //index.js
+import config from '../../config'
 import {
   initAnimation,
   getAnimation
@@ -12,7 +13,7 @@ Page({
     resume: {
       startPage: 0,
       pages: [],
-      cdn: '',
+      imgPath: '',
       bg: ''
     },
     current: 0,
@@ -22,19 +23,24 @@ Page({
   customData: {
     timeouts: []
   },
-  onLoad: function() {
+  onLoad: function () {
     const resume = app.globalData.resume
     if (resume) {
       this.setResumeData(resume)
     } else {
-      app.resumeReadyCallback = res => {
-        this.setResumeData(res.data)
+      app.resumeReadyCallback = data => {
+        this.setResumeData(data)
       }
     }
   },
-  setResumeData: function(resume) {
-    resume = { ...this.data.resume,
-      ...resume
+  setResumeData: function (resume) {
+    resume = {
+      ...this.data.resume,
+      ...resume,
+      ...config,
+      workslimit: resume.works.slice(0, 3),
+      works1limit: resume.works1.slice(0, 3),
+      works2limit: resume.works2.slice(0, 3)
     }
     this.setData({
       resume,
@@ -42,13 +48,13 @@ Page({
     })
     this.setAnimation()
   },
-  getCurrent: function(current) {
+  getCurrent: function (current) {
     return {
       current,
       [`resume.pages[${current}].show`]: true
     }
   },
-  setAnimation: function() {
+  setAnimation: function () {
     this.setData({
       animation: {}
     })
@@ -70,7 +76,7 @@ Page({
       this.setSkillAnimation()
     }
   },
-  setSkillAnimation: function() {
+  setSkillAnimation: function () {
     const skills = this.data.resume.skills || []
     const temp = []
     const timeouts = []
@@ -85,13 +91,13 @@ Page({
     }
     this.customData.timeouts = timeouts
   },
-  clearSkillAnimation: function() {
+  clearSkillAnimation: function () {
     for (let i of this.customData.timeouts) {
       clearTimeout(i)
     }
     this.customData.timeouts = []
   },
-  bindchange: function(e) {
+  bindchange: function (e) {
     this.clearSkillAnimation()
     this.setData({
       ...this.getCurrent(e.detail.current),
@@ -99,23 +105,23 @@ Page({
     })
     this.setAnimation()
   },
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
     const {
-      cdn,
+      imgPath,
       shareImage
     } = this.data.resume
     return {
-      imageUrl: cdn + shareImage
+      imageUrl: imgPath + shareImage
     }
   },
-  previewImage: function(e) {
+  previewImage: function (e) {
     wx.previewImage({
       urls: [e.currentTarget.dataset.src]
     })
   },
-  previewWorks: function(e) {
+  previewWorks: function (e) {
     const {
-      cdn
+      workPath
     } = this.data.resume
     const {
       src,
@@ -123,15 +129,15 @@ Page({
     } = e.currentTarget.dataset
     wx.previewImage({
       current: src,
-      urls: works.map(n => cdn + n.src)
+      urls: works.map(n => `${workPath}${n.project}/${n.src}`)
     })
   },
-  callMe: function() {
+  callMe: function () {
     wx.makePhoneCall({
       phoneNumber: this.data.resume.phone
     })
   },
-  saveQrcode: function() {
+  saveQrcode: function () {
     wx.showActionSheet({
       itemList: ['保存图片'],
       success: () => {
@@ -152,13 +158,13 @@ Page({
       }
     })
   },
-  downloadAndSaveQrcode: function() {
+  downloadAndSaveQrcode: function () {
     const {
-      cdn,
+      imgPath,
       qrcode
     } = this.data.resume
     wx.downloadFile({
-      url: cdn + qrcode,
+      url: imgPath + qrcode,
       success: res => {
         wx.saveImageToPhotosAlbum({
           filePath: res.tempFilePath,
